@@ -3138,6 +3138,7 @@ dependencies = [
  "pretty_assertions",
  "rayon",
  "regex",
+ "rkyv",
  "rspack_ast",
  "rspack_database",
  "rspack_error",
