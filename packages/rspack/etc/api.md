@@ -2868,23 +2868,28 @@ const experiments: z.ZodObject<{
     rspackFuture: z.ZodOptional<z.ZodObject<{
         bundlerInfo: z.ZodOptional<z.ZodObject<{
             version: z.ZodOptional<z.ZodString>;
-            force: z.ZodOptional<z.ZodUnion<[z.ZodBoolean, z.ZodArray<z.ZodEnum<["version"]>, "many">]>>;
+            bundler: z.ZodOptional<z.ZodString>;
+            force: z.ZodOptional<z.ZodUnion<[z.ZodBoolean, z.ZodArray<z.ZodEnum<["version", "uniqueId"]>, "many">]>>;
         }, "strict", z.ZodTypeAny, {
             version?: string | undefined;
-            force?: boolean | "version"[] | undefined;
+            bundler?: string | undefined;
+            force?: boolean | ("version" | "uniqueId")[] | undefined;
         }, {
             version?: string | undefined;
-            force?: boolean | "version"[] | undefined;
+            bundler?: string | undefined;
+            force?: boolean | ("version" | "uniqueId")[] | undefined;
         }>>;
     }, "strict", z.ZodTypeAny, {
         bundlerInfo?: {
             version?: string | undefined;
-            force?: boolean | "version"[] | undefined;
+            bundler?: string | undefined;
+            force?: boolean | ("version" | "uniqueId")[] | undefined;
         } | undefined;
     }, {
         bundlerInfo?: {
             version?: string | undefined;
-            force?: boolean | "version"[] | undefined;
+            bundler?: string | undefined;
+            force?: boolean | ("version" | "uniqueId")[] | undefined;
         } | undefined;
     }>>;
 }, "strict", z.ZodTypeAny, {
@@ -2901,7 +2906,8 @@ const experiments: z.ZodObject<{
     rspackFuture?: {
         bundlerInfo?: {
             version?: string | undefined;
-            force?: boolean | "version"[] | undefined;
+            bundler?: string | undefined;
+            force?: boolean | ("version" | "uniqueId")[] | undefined;
         } | undefined;
     } | undefined;
 }, {
@@ -2918,7 +2924,8 @@ const experiments: z.ZodObject<{
     rspackFuture?: {
         bundlerInfo?: {
             version?: string | undefined;
-            force?: boolean | "version"[] | undefined;
+            bundler?: string | undefined;
+            force?: boolean | ("version" | "uniqueId")[] | undefined;
         } | undefined;
     } | undefined;
 }>;
@@ -8514,23 +8521,28 @@ export type RspackFutureOptions = z.infer<typeof rspackFutureOptions>;
 const rspackFutureOptions: z.ZodObject<{
     bundlerInfo: z.ZodOptional<z.ZodObject<{
         version: z.ZodOptional<z.ZodString>;
-        force: z.ZodOptional<z.ZodUnion<[z.ZodBoolean, z.ZodArray<z.ZodEnum<["version"]>, "many">]>>;
+        bundler: z.ZodOptional<z.ZodString>;
+        force: z.ZodOptional<z.ZodUnion<[z.ZodBoolean, z.ZodArray<z.ZodEnum<["version", "uniqueId"]>, "many">]>>;
     }, "strict", z.ZodTypeAny, {
         version?: string | undefined;
-        force?: boolean | "version"[] | undefined;
+        bundler?: string | undefined;
+        force?: boolean | ("version" | "uniqueId")[] | undefined;
     }, {
         version?: string | undefined;
-        force?: boolean | "version"[] | undefined;
+        bundler?: string | undefined;
+        force?: boolean | ("version" | "uniqueId")[] | undefined;
     }>>;
 }, "strict", z.ZodTypeAny, {
     bundlerInfo?: {
         version?: string | undefined;
-        force?: boolean | "version"[] | undefined;
+        bundler?: string | undefined;
+        force?: boolean | ("version" | "uniqueId")[] | undefined;
     } | undefined;
 }, {
     bundlerInfo?: {
         version?: string | undefined;
-        force?: boolean | "version"[] | undefined;
+        bundler?: string | undefined;
+        force?: boolean | ("version" | "uniqueId")[] | undefined;
     } | undefined;
 }>;
 
@@ -9207,23 +9219,28 @@ export const rspackOptions: z.ZodObject<{
         rspackFuture: z.ZodOptional<z.ZodObject<{
             bundlerInfo: z.ZodOptional<z.ZodObject<{
                 version: z.ZodOptional<z.ZodString>;
-                force: z.ZodOptional<z.ZodUnion<[z.ZodBoolean, z.ZodArray<z.ZodEnum<["version"]>, "many">]>>;
+                bundler: z.ZodOptional<z.ZodString>;
+                force: z.ZodOptional<z.ZodUnion<[z.ZodBoolean, z.ZodArray<z.ZodEnum<["version", "uniqueId"]>, "many">]>>;
             }, "strict", z.ZodTypeAny, {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             }, {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             }>>;
         }, "strict", z.ZodTypeAny, {
             bundlerInfo?: {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             } | undefined;
         }, {
             bundlerInfo?: {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             } | undefined;
         }>>;
     }, "strict", z.ZodTypeAny, {
@@ -9240,7 +9257,8 @@ export const rspackOptions: z.ZodObject<{
         rspackFuture?: {
             bundlerInfo?: {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             } | undefined;
         } | undefined;
     }, {
@@ -9257,7 +9275,8 @@ export const rspackOptions: z.ZodObject<{
         rspackFuture?: {
             bundlerInfo?: {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             } | undefined;
         } | undefined;
     }>>;
@@ -10882,7 +10901,8 @@ export const rspackOptions: z.ZodObject<{
         rspackFuture?: {
             bundlerInfo?: {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             } | undefined;
         } | undefined;
     } | undefined;
@@ -11367,7 +11387,8 @@ export const rspackOptions: z.ZodObject<{
         rspackFuture?: {
             bundlerInfo?: {
                 version?: string | undefined;
-                force?: boolean | "version"[] | undefined;
+                bundler?: string | undefined;
+                force?: boolean | ("version" | "uniqueId")[] | undefined;
             } | undefined;
         } | undefined;
     } | undefined;
